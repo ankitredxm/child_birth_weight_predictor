@@ -76,16 +76,42 @@
         border-radius: 12px;
         box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     }
-    @media (max-width: 900px) {
-        body {
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
-        .result img {
-            width: 100%;
-            max-width: 350px;
-        }
+   @media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        align-items: stretch;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .form-group input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    .result img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .result p {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+
     }
 </style>
 </head>
