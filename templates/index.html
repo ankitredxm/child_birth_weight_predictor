@@ -34,9 +34,9 @@
         flex-direction: column;
         margin-bottom: 18px;
     }
-    .result p{
+    .result p {
         text-decoration: solid;
-        height:0.9rem;
+        height: 0.9rem;
     }
     .form-group label {
         font-weight: 600;
@@ -76,42 +76,56 @@
         border-radius: 12px;
         box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     }
-   @media (max-width: 600px) {
-    body {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
-        align-items: stretch;
+
+    /* Tablet and small screens */
+    @media (max-width: 900px) {
+        body {
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            height: auto;
+        }
+        .result img {
+            width: 100%;
+            max-width: 350px;
+        }
     }
 
-    .form-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 20px;
-    }
+    /* Mobile optimization */
+    @media (max-width: 600px) {
+        body {
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px;
+            align-items: stretch;
+        }
 
-    .form-group input {
-        font-size: 16px;
-        padding: 12px;
-    }
+        .form-container {
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+        }
 
-    .submit-btn {
-        font-size: 18px;
-        padding: 14px;
-    }
+        .form-group input {
+            font-size: 16px;
+            padding: 12px;
+        }
 
-    .result img {
-        width: 100%;
-        max-width: 100%;
-    }
+        .submit-btn {
+            font-size: 18px;
+            padding: 14px;
+        }
 
-    .result p {
-        text-align: center;
-        font-size: 18px;
-        margin-top: 10px;
-    }
-}
+        .result img {
+            width: 100%;
+            max-width: 100%;
+        }
 
+        .result p {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
     }
 </style>
 </head>
@@ -151,8 +165,9 @@
 <!-- Image on the right -->
 <div class="result">
     <img src="{{ url_for('static', filename='ankit.png') }}" alt="Pregnancy Image">
-    <p>Baby Weight:{{prediction}}</p>
+    <p>Baby Weight: {{prediction}}</p>
 </div>
 
 </body>
 </html>
+
