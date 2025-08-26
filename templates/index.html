@@ -154,9 +154,21 @@
 <!-- Image below form -->
 <div class="result">
     <img src="{{ url_for('static', filename='ankit.png') }}" alt="Pregnancy Image">
-   {% if prediction is defined %}
-    <p>Baby Weight: {{ (prediction * 0.0283495) | round(2) }} Kg</p>
-{% endif %}
+
+    {% if prediction is defined %}
+        {% set weight_kg = (prediction * 0.0283495) %}
+        <p>Baby Weight: {{ weight_kg | round(2) }} Kg</p>
+
+        {% if weight_kg < 2.5 %}
+            <p style="color: red; font-weight: bold;">Low Weight – Consult a doctor!</p>
+        {% elif weight_kg > 4 %}
+            <p style="color: blue; font-weight: bold;">High Weight – May require special care.</p>
+        {% else %}
+            <p style="color: green; font-weight: bold;">Normal Weight – Healthy baby!</p>
+        {% endif %}
+    {% endif %}
+</div>
+
 
 
 </div>
