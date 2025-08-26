@@ -154,7 +154,10 @@
 <!-- Image below form -->
 <div class="result">
     <img src="{{ url_for('static', filename='ankit.png') }}" alt="Pregnancy Image">
-   <p>Baby Weight: {{ (prediction * 0.0283495) | round(2) }} Kg</p>
+   {% if prediction is defined %}
+    <p>Baby Weight: {{ (prediction * 0.0283495) | round(2) }} Kg</p>
+{% endif %}
+
 
 </div>
 
